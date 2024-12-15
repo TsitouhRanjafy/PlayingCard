@@ -1,7 +1,7 @@
 <div class="w-full flex flex-col items-center justify-center">
     <app-search-bar 
-        (searchButtonClicked)="increaseCount()" 
-        (searchChange)="search = $event"
+        (submit)="increaseCount()" 
+        (onChange)="search = $event"
     />
     <p class="select-none">search: {{ search }}</p>
     <p class="select-none">click count: {{ count }}</p>

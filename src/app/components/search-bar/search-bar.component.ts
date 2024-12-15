@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms';
 export class SearchBarComponent {
 
   @Input() search = '';
-  @Output() searchChange = new EventEmitter<string>();
-  @Output() searchButtonClicked = new EventEmitter();
+  @Output('onChange') searchChange = new EventEmitter<string>();
+  @Output('submit') searchButtonClicked = new EventEmitter();
 
   searchClick(): void {
     this.searchButtonClicked.emit();
