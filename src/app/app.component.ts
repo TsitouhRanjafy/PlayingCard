@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(){
     this.monster1 = new Monster();
     this.monster1.name = 'pik';
-    this.monster1.hp = 40;
+    this.monster1.hp = 10;
     this.monster1.figureCaption = 'N°001 Monster';
     this.monster1.attackDescription = 'Geo Impact';
     this.monster1.attackStrength =  60;

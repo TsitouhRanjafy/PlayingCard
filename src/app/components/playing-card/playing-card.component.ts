@@ -10,5 +10,13 @@ import { Monster } from '../../models/monster.model';
 })
 export class PlayingCardComponent {
 
-  @Input() monster: Monster = new Monster();
+  @Input({
+    required: true,
+    alias: 'input-monster-class',
+    transform: (value: Monster) => {
+      value.hp = value.hp / 2;
+      console.log(value.hp);
+      return value;
+    }
+  }) monster: Monster = new Monster();
 }

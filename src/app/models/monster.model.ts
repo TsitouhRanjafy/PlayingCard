@@ -7,4 +7,5 @@ export class Monster{
     attackName: string = 'Geo Impact';
     attackStrength: number = 60;
     attackDescription: string = 'This is a long description of moster capacity Probably something to do with electricity.'
+
 }
