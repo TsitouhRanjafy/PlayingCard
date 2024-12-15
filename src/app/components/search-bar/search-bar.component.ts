@@ -12,18 +12,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchBarComponent {
 
-  search = input<string>('');
-  searchChange = output<string>({
-    alias: 'onChange'
-  });
+  search = model<string>();
   searchButtonClicked = output({
     alias: 'submit'
   });
 
   searchClick(): void {
     this.searchButtonClicked.emit();
-  }
-  updateSearchange(value: string){
-    this.searchChange.emit(value)
   }
 }
