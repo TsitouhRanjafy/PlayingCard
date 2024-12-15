@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input, InputSignal } from '@angular/core';
 import { Monster } from '../../models/monster.model';
 
 @Component({
@@ -10,13 +10,5 @@ import { Monster } from '../../models/monster.model';
 })
 export class PlayingCardComponent {
 
-  @Input({
-    required: true,
-    alias: 'input-monster-class',
-    transform: (value: Monster) => {
-      value.hp = value.hp / 2;
-      console.log(value.hp);
-      return value;
-    }
-  }) monster: Monster = new Monster();
+  monster: InputSignal<Monster> = input(new Monster());
 }
