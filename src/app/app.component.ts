@@ -18,7 +18,8 @@ export class AppComponent {
 
   monster1!: Monster;
   count: number = 0;
-  
+  search: string = '';
+
   constructor(){
     this.monster1 = new Monster();
     this.monster1.name = 'pik';
