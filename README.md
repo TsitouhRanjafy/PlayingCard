@@ -1,6 +1,6 @@
 # PlayingCards
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular) version 18.2.8 with [Tutorial](https://www.youtube.com/watch?v=U71TQN68QGU)
 
 ## Development server
 
