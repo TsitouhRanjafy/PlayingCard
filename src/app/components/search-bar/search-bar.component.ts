@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, model, NgModule, output, Output } from '@angular/core';
+import { Component, EventEmitter, input, Input, model, NgModule, output, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchBarComponent {
 
-  @Input() search = '';
+  search = input<string>('');
   searchChange = output<string>({
     alias: 'onChange'
   });
