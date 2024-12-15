@@ -3,4 +3,7 @@
 }
 .bg-scss-1{
     background-color: rgb(213, 221, 255);
+    &:active{
+        background-color: rgb(188, 200, 255);
+    }
 }

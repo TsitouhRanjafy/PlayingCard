@@ -18,6 +18,7 @@ export class AppComponent {
 
   monster1!: Monster;
   count: number = 0;
+  
   constructor(){
     this.monster1 = new Monster();
     this.monster1.name = 'pik';
@@ -26,5 +27,9 @@ export class AppComponent {
     this.monster1.attackDescription = 'Geo Impact';
     this.monster1.attackStrength =  60;
     this.monster1.attackDescription = 'This is a long description of moster capacity Probably something to do with electricity.'
+  }
+
+  increaseCount(){
+    this.count++;
   }
 }
