@@ -1,6 +1,10 @@
+import { MonsterType } from "../utils/monster.utils";
+
 export class Monster{
 
     name: string = "My Monster 2";
+    imgeURL: string = "assets/img2.png";
+    type: MonsterType = MonsterType.ELECTRIC;
     hp: number = 40;
     figureCaption : string = 'N°001 Monster';
 

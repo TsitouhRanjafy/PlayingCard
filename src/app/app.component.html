@@ -1,8 +1,5 @@
-<div class="w-full flex flex-col items-center justify-center">
-    <app-search-bar 
-        (submit)="increaseCount()" 
-        [(search)]="search"
-    />
-    <p class="select-none">search: {{ search }}</p>
-    <p class="select-none">click count: {{ count }}</p>
+<button class="bg-zinc-300 border-2 border-gray-400 px-2 py-1 rounded-xl active:bg-zinc-400" (click)="toggleMonster()" >Toggle Monster</button>
+
+<div class="card-list">
+    <app-playing-card [monster]="monsters[selectedMonsterIndex]"/>
 </div>
