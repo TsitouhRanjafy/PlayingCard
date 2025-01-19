@@ -1,3 +1,13 @@
+# Signal
+### Angular >= 16 : Les Signaux a.k.a Signals
+
+> signal()
+    - lecture / écriture
+> computed(() => {})
+    - lecture
+> effect(() => {})
+
+
 # PlayingCards
 
 This project was generated with [Angular CLI](https://github.com/angular/angular) version 18.2.8 with [Tutorial](https://www.youtube.com/watch?v=U71TQN68QGU)
