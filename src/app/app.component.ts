@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component , signal , computed , effect } from '@angular/core';
 import { PlayingCardComponent } from './components/playing-card/playing-card.component';
 import { Monster } from './models/monster.model';
 import { MonsterType } from './utils/monster.utils';
-import { signal } from '@angular/core';
-import { computed } from '@angular/core';
+import { WritableSignal } from '@angular/core';
+import { Signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -21,12 +21,16 @@ export class AppComponent {
   count: number = 0;
   search: string = '';
 
-  selectedMonsterIndex = signal(1);
-  selectedMonster = computed(() => {
+  selectedMonsterIndex: WritableSignal<number> = signal(1);
+  selectedMonster: Signal<Monster> = computed(() => {
     return this.monsters[this.selectedMonsterIndex()];
   })
 
   constructor(){
+    effect(() => {
+      console.log(this.selectedMonster());
+    })
+
     this.monsters = [];
 
     const monster1 = new Monster();

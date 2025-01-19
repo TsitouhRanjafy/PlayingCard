@@ -1,6 +1,8 @@
-import { Component, input, Input, InputSignal, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, input, OnChanges, SimpleChanges , Signal , signal} from '@angular/core';
 import { Monster } from '../../models/monster.model';
 import { MonsterTypeProprieties } from '../../utils/monster.utils';
+import { computed } from '@angular/core';
+import { WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-playing-card',
@@ -9,18 +11,11 @@ import { MonsterTypeProprieties } from '../../utils/monster.utils';
   templateUrl: './playing-card.component.html',
   styleUrl: './playing-card.component.scss'
 })
-export class PlayingCardComponent implements OnChanges{
+export class PlayingCardComponent {
   
-  @Input() monster: Monster = new Monster();
-  backgroundColor: string = '#ff0033'
-
-  // changer la bg color selon son type de monstre
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['monster']){
-      this.backgroundColor = MonsterTypeProprieties[this.monster.type].color;
-      console.log(MonsterTypeProprieties[this.monster.type].color);
-      
-    }
-  }
+  monster = input(new Monster());
+  backgroundColor: Signal<string> = computed(() => {
+    return MonsterTypeProprieties[this.monster().type].color
+  })
 
 }
