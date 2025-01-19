@@ -1,7 +1,7 @@
 # Signal
 ### Angular >= 16 : Les Signaux a.k.a Signals
 
-> signal()
+ signal()
     - lecture / écriture
 > computed(() => {})
     - lecture

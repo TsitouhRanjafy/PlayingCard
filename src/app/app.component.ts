@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { PlayingCardComponent } from './components/playing-card/playing-card.component';
 import { Monster } from './models/monster.model';
 import { MonsterType } from './utils/monster.utils';
+import { signal } from '@angular/core';
+import { computed } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent {
   count: number = 0;
   search: string = '';
 
-  selectedMonsterIndex = 0;
+  selectedMonsterIndex = signal(1);
 
   constructor(){
     this.monsters = [];
@@ -49,6 +51,6 @@ export class AppComponent {
   }
 
   toggleMonster(){
-    this.selectedMonsterIndex = (this.selectedMonsterIndex + 1) % this.monsters.length
+    this.selectedMonsterIndex.set((this.selectedMonsterIndex() + 1) % this.monsters.length)
   }
 }
