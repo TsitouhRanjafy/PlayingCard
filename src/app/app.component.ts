@@ -22,6 +22,9 @@ export class AppComponent {
   search: string = '';
 
   selectedMonsterIndex = signal(1);
+  selectedMonster = computed(() => {
+    return this.monsters[this.selectedMonsterIndex()];
+  })
 
   constructor(){
     this.monsters = [];
