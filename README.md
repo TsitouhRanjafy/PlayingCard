@@ -1,11 +1,11 @@
 # Signal
 ### Angular >= 16 : Les Signaux a.k.a Signals
 
-> signal()
-    - lecture / écriture
-> computed(() => {})
-    - lecture
-> effect(() => {})
+**signal()** : lecture / écriture
+    
+**computed(() => {})** : lecture
+
+**effect(() => {})**
 
 
 # PlayingCards
