@@ -5,5 +5,7 @@
     <app-playing-card *ngFor="let monster of filterMonsters()" [monster]="monster"/>
 </div>
 
-<div *ngIf="filterMonsters().length == 0" class="">No monster found</div>
-<div *ngIf="filterMonsters().length != 0" class="">Found {{ filterMonsters().length }} monsters!</div>
+<div *ngIf="filterMonsters().length == 0; else found" class="text-center">No monster found</div>
+<ng-template #found>
+    <div class="text-center">Found {{ filterMonsters().length }} monsters!</div>
+</ng-template>
