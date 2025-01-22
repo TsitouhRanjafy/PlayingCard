@@ -1,11 +1,12 @@
 <app-search-bar [(search)]="search" > </app-search-bar>
 
-
 <div class="flex flex-row card-list">
-    <app-playing-card *ngFor="let monster of filterMonsters()" [monster]="monster"/>
+    @for (monster of filterMonsters(); track monster) {
+        <app-playing-card [monster]="monster"/>
+    }
 </div>
 
-@if (filterMonsters.length == 0) {
+@if (filterMonsters().length == 0) {
     <div class="text-center">No monster found</div>
 } @else {
     <div class="text-center">Found {{ filterMonsters().length }} monsters!</div>
