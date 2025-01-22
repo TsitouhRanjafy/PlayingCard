@@ -14,9 +14,6 @@ import { WritableSignal } from '@angular/core';
 export class PlayingCardComponent {
   
   monster = input(new Monster());
-  // backgroundColor change on monster change 
-  backgroundColor: Signal<string> = computed(() => {
-    return MonsterTypeProprieties[this.monster().type].color
-  })
+  backgroundColor: Signal<string> = computed(() => MonsterTypeProprieties[this.monster().type].color)
 
 }
