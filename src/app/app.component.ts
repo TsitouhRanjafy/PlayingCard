@@ -1,4 +1,4 @@
-import { Component , signal , computed } from '@angular/core';
+import { Component , signal , computed, model } from '@angular/core';
 import { PlayingCardComponent } from './components/playing-card/playing-card.component';
 import { Monster } from './models/monster.model';
 import { MonsterType } from './utils/monster.utils';
@@ -22,13 +22,12 @@ export class AppComponent {
   title = 'playing-cards';
 
   monsters!: Monster[];
-  count: number = 0;
-  search: string = '';
+  search = model('');
 
-  selectedMonsterIndex: WritableSignal<number> = signal(1);
-  selectedMonster: Signal<Monster> = computed(() =>  this.monsters[this.selectedMonsterIndex()] )
+  filterMonsters = computed(() => this.monsters.filter(monster => monster.name.includes(this.search())))
 
   constructor(){
+
     this.monsters = [];
 
     const monster1 = new Monster();
