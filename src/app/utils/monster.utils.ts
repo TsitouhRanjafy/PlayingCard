@@ -25,6 +25,6 @@ export const MonsterTypeProprieties: {[key : string]:IMonsterProprieties} = {
     },
     [MonsterType.WATER]: {
         imageUrl : 'assets/img4.png',
-        color: 'rgba(24,0,124)'
+        color: 'rgba(227,255,74)'
     }
 }

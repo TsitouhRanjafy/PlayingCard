@@ -1,15 +1,15 @@
-<app-search-bar [(search)]="search" > </app-search-bar>
+<app-search-bar class="" [(search)]="search" > </app-search-bar>
 
-<div class="flex flex-row card-list">
-    @for (monster of filterMonsters(); track monster) {
+<div class="flex flex-row mx-2 overflow-hidden card-list justify-center">
+    @for (monster of filterMonsters(); track monster.name; let i = $index) {
+        <p>{{i}}</p>
         <app-playing-card [monster]="monster"/>
+    } @empty {
+        <div class="text-center">No monster found</div>
     }
 </div>
 
-@if (filterMonsters().length == 0) {
-    <div class="text-center">No monster found</div>
-} @else {
+@if (filterMonsters().length > 0) {
     <div class="text-center">Found {{ filterMonsters().length }} monsters!</div>
-}
-
+} 
 

@@ -47,19 +47,19 @@ export class AppComponent {
     this.monsters.push(monster2)
 
     const monster3 = new Monster();
-    monster1.name = 'sala';
-    monster1.imgeURL = "assets/img1.png"
-    monster1.hp = 14;
-    monster1.type = MonsterType.ELECTRIC
-    monster1.figureCaption = 'N°003 Monster';
+    monster3.name = 'sala';
+    monster3.imgeURL = "assets/img1.png"
+    monster3.hp = 14;
+    monster3.type = MonsterType.FIRE
+    monster3.figureCaption = 'N°003 Monster'; 
     this.monsters.push(monster3);
 
     const monster4 = new Monster();
-    monster2.name = 'dil';
-    monster2.imgeURL = 'assets/img2.png'
-    monster2.hp = 20;
-    monster2.type = MonsterType.WATER
-    monster2.figureCaption = 'N°004 Monster';
+    monster4.name = 'dil';
+    monster4.imgeURL = 'assets/img2.png'
+    monster4.hp = 20; 
+    monster4.type = MonsterType.PLANT
+    monster4.figureCaption = 'N°004 Monster';
     this.monsters.push(monster4);
 
     monster2.attackStrength =  60;
