@@ -6,6 +6,7 @@ import { WritableSignal } from '@angular/core';
 import { Signal } from '@angular/core';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { CommonModule } from '@angular/common';
+import { MonsterService } from './services/monster/monster.service';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,9 @@ export class AppComponent {
 
   filterMonsters = computed(() => this.monsters.filter(monster => monster.name.includes(this.search())))
 
-  constructor(){
+  constructor(
+    private monsterService: MonsterService
+  ){
 
     this.monsters = [];
 
@@ -64,6 +67,8 @@ export class AppComponent {
 
     monster2.attackStrength =  60;
     monster2.attackDescription = 'This is a long description of moster capacity Probably something to do with electricity.'
+
+    this.monsterService.hello();
   }
 
 }
