@@ -1,4 +1,4 @@
-import { Component , signal , computed, model } from '@angular/core';
+import { Component , signal , computed, model, inject } from '@angular/core';
 import { PlayingCardComponent } from './components/playing-card/playing-card.component';
 import { Monster } from './models/monster.model';
 import { MonsterType } from './utils/monster.utils';
@@ -25,11 +25,11 @@ export class AppComponent {
   monsters!: Monster[];
   search = model('');
 
+  monsterService = inject(MonsterService);
+
   filterMonsters = computed(() => this.monsters.filter(monster => monster.name.includes(this.search())))
 
-  constructor(
-    private monsterService: MonsterService
-  ){
+  constructor(){
 
     this.monsters = [];
 
@@ -67,8 +67,8 @@ export class AppComponent {
 
     monster2.attackStrength =  60;
     monster2.attackDescription = 'This is a long description of moster capacity Probably something to do with electricity.'
-
-    this.monsterService.hello();
+    
+    this.monsterService.hello();  
   }
 
 }
