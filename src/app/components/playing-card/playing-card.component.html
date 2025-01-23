@@ -1,5 +1,5 @@
-<div id="card" class="flex justify-center w-96 rounded-xl overflow-hidden">
-    <div id="inside" class="p-1 m-4 rounded-xl flex flex-col justify-centeritems-center" [style.background-color]="backgroundColor()">
+<div id="card" class="flex justify-center w-96 rounded-xl overflow-hidden h-full">
+    <div id="inside" class="px-2 m-4 rounded-xl flex flex-col justify-centeritems-center" [style.background-color]="backgroundColor()">
         <header class="flex flex-row justify-between w-full my-1 ">
             <div class="" >
                 <div class="font-medium">{{ monster().name }}</div>
@@ -15,9 +15,9 @@
             </div>
         </header>
 
-        <figure class="bg-slate-500 p-1 flex bg-grey flex-col">
-            <img [src]="monster().imgeURL" alt="">        
-            <figcaption class="text-sm font-normal">{{monster().figureCaption}}</figcaption>    
+        <figure class="bg-slate-500 flex bg-grey flex-col pb-1 rounded-xl" >
+            <img class="rounded-xl" [src]="monster().imgeURL" alt="">        
+            <figcaption class="text-sm font-normal mt-1 mx-1">{{monster().figureCaption}}</figcaption>    
         </figure>
         <div id="capcities" class=" flex mt-2">
             <div>
