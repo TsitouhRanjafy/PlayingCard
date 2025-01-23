@@ -7,8 +7,42 @@ import { MonsterType } from '../../utils/monster.utils';
 })
 export class MonsterService {
 
-  constructor() { 
+  monsters: Monster[] = []
+  currentIndex: number = 1;
 
+  constructor() { 
+    this.load();
+  }
+
+  private save() {
+    if (typeof window !== 'undefined'){
+      localStorage.setItem('monster',JSON.stringify(this.monsters))
+      console.log(localStorage.getItem('monster'));
+      
+    }
+  }
+
+  /**
+   * get saved data
+   * if data empty, init and save data
+   */
+  private load(){
+    let monsterSavedData = undefined;
+    if (typeof window !== 'undefined') {
+      // localStorage.removeItem('monster');
+      monsterSavedData = localStorage.getItem('monster');
+      if (monsterSavedData) {
+        this.monsters =  JSON.parse(monsterSavedData).map((monsterJSON: any) => Object.assign(new Monster(),monsterJSON));
+        this.currentIndex = Math.max(...this.monsters.map((monster) => monster.id))
+      } else {
+        this.init()
+        this.save()
+      }
+    }
+  }
+
+  // si localStorage est vide
+  private init() {
     const monster1 = new Monster();
     monster1.name = 'pik';
     monster1.imgeURL = "assets/img1.png"
@@ -40,16 +74,6 @@ export class MonsterService {
     monster4.type = MonsterType.PLANT
     monster4.figureCaption = 'N°004 Monster';
     this.monsters.push(monster4);
-
-    monster2.attackStrength =  60;
-    monster2.attackDescription = 'This is a long description of moster capacity Probably something to do with electricity.'
-  }
-
-  monsters: Monster[] = []
-  currentIndex: number = 1;
-
-  hello(): void {
-    console.log('Hello');
   }
 
   getAll(): Monster[] {
@@ -67,6 +91,7 @@ export class MonsterService {
     monsterCopy.id = this.currentIndex;
     this.monsters.push(monsterCopy.copy());
     this.currentIndex++;
+    this.save();
 
     return monsterCopy;
   }

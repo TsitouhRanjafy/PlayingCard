@@ -14,7 +14,7 @@ export class Monster{
     attackDescription: string = 'This is a long description of moster capacity Probably something to do with electricity.'
 
     copy(): Monster {
-        return Object.assign(new Monster,this);
+        return Object.assign(new Monster(),this);
     }
 
 }
