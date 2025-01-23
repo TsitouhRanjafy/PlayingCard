@@ -44,6 +44,7 @@ export class MonsterService {
   // si localStorage est vide
   private init() {
     const monster1 = new Monster();
+    monster1.id = this.currentIndex++;
     monster1.name = 'pik';
     monster1.imgeURL = "assets/img1.png"
     monster1.hp = 10;
@@ -52,6 +53,7 @@ export class MonsterService {
     this.monsters.push(monster1);
 
     const monster2 = new Monster();
+    monster2.id = this.currentIndex++;
     monster2.name = 'carl';
     monster2.imgeURL = 'assets/img2.png'
     monster2.hp = 15;
@@ -60,6 +62,7 @@ export class MonsterService {
     this.monsters.push(monster2)
 
     const monster3 = new Monster();
+    monster3.id = this.currentIndex++;
     monster3.name = 'sala';
     monster3.imgeURL = "assets/img1.png"
     monster3.hp = 14;
@@ -68,6 +71,7 @@ export class MonsterService {
     this.monsters.push(monster3);
 
     const monster4 = new Monster();
+    monster4.id = this.currentIndex++;
     monster4.name = 'dil';
     monster4.imgeURL = 'assets/img2.png'
     monster4.hp = 20; 

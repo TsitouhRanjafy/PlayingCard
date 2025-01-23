@@ -1,9 +1,11 @@
 <app-search-bar class="" [(search)]="search" > </app-search-bar>
 
-<div class="flex flex-row mx-2 overflow-hidden card-list justify-center">
+<div class="flex flex-row flex-wrap mx-2 overflow-hidden card-list justify-center">
     @for (monster of filterMonsters(); track monster.name; let i = $index) {
-        <p>{{i}}</p>
-        <app-playing-card [monster]="monster"/>
+        <div class="w-56 border-2 h-fit">
+            <p>{{i}}</p>
+            <app-playing-card [monster]="monster"/>
+        </div>
     } @empty {
         <div class="text-center">No monster found</div>
     }
